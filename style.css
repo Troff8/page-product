@@ -73,6 +73,7 @@ video {
   display: block;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 h1,
 h2,
@@ -99,7 +100,7 @@ h6 {
   flex: 1 1 auto;
 }
 .product__container {
-  margin: 61px 286px 112px 85px;
+  margin: 61px 0px 112px 85px;
 }
 
 .arrow {
@@ -115,17 +116,18 @@ h6 {
   display: none;
 }
 .product__images {
-  max-width: 978px;
-  max-height: 1284px;
+  /* max-width: 978px;
+  max-height: 1284px; */
+  width: 60%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 19px;
 }
 .product__image {
   cursor: pointer;
-  width: 479.671px;
+  width: 100%;  
   flex: 1 1 10%;
-  height: 631.809px;
+  max-height: 630px;
 }
 ._image-fullscreen img {
 
@@ -136,7 +138,7 @@ h6 {
 }
 
 .product__information {
-  margin-left: 71px;
+  margin-left: 3%;
 }
 .product__title {
   font-size: 30px;
@@ -154,7 +156,7 @@ h6 {
   fill: red;
 }
 .product__sale {
-  width: 499px;
+  width: 110%;
   height: 78px;
   display: flex;
   align-items: center;
@@ -172,7 +174,7 @@ h6 {
 }
 
 .product__table {
-  width: 499px;
+  width: 90%;
   min-height: 326px;
   margin: 44px 0px 0px 0px;
   border: 1px solid #eee;
@@ -380,6 +382,7 @@ h6 {
   }
   .product__image_video {
     height: 450px;
+
   }
   .mobile-slider {
     display: block;
@@ -525,16 +528,14 @@ h6 {
     align-items: center;
   }
 }
-[class*="__container-section"] {
-  margin: 0px 286px 89px 286px;
-}
+
 .product-description__container-section {
   display: flex;
   gap: 82px;
 }
 
 .consultation-card {
-  width: 499px;
+  width: 30%;
   height: 424px;
   border: 1px solid #eee;
   background: #fff;
@@ -597,7 +598,7 @@ h6 {
   border-top: 2px solid #9a7660;
 }
 .product-desctiption__text {
-  width: 767px;
+  width: 95%;
   display: none;
 }
 ._text-active {
@@ -628,8 +629,8 @@ h6 {
   flex-direction: column;
 }
 .card-product__image {
-  width: 322px;
-  height: 423px;
+  width: 90%;
+  max-height: 423px;
   margin-bottom: 29px;
 }
 .card-product__collection {
@@ -648,7 +649,7 @@ h6 {
   margin-top: 50px;
 }
 .arrow__buttom {
-  margin: 0px 0px 100px 286px;
+  margin: 0px 0px 100px 0px;
 }
 @media (max-width: 390px) and (min-width: 320px) {
   .product-desctiption__buttons {
@@ -722,4 +723,14 @@ h6 {
   position: absolute;
   top: -40%;
   left: 5%;
+}
+.main-wrapper{
+  margin: 0 10%;
+}
+.recomendation__container-section{
+  margin-bottom: 89px;
+}
+.product-description__container-section{
+  margin-bottom: 89px;
+  justify-content: space-evenly;
 }
