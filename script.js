@@ -1,5 +1,5 @@
+// counter
 let counter = document.getElementById("counter");
-
 document.getElementById("counter__reduce").addEventListener("click", () => {
   if (counter.value > 1) counter.value = +counter.value - 1;
 });
@@ -13,20 +13,29 @@ heart.addEventListener("click", () => {
   heart.classList.toggle("_active");
 });
 
+// кнопки в описании
 let buttonMenu = document.querySelectorAll(".button-menu");
-
-
 for (let i = 0; i < buttonMenu.length; i++) {
-  buttonMenu[i].addEventListener(
-    "click",
-    (e) => {
-      buttonMenu.forEach(el=> el.classList.remove("button-menu_active"))
-      e.currentTarget.classList.toggle('button-menu_active');
-    },
-    false
-  );
+  buttonMenu[i].addEventListener("click", (e) => {
+    buttonMenu.forEach((el) => el.classList.remove("button-menu_active"));
+    e.currentTarget.classList.toggle("button-menu_active");
+  });
 }
 
+let colorsArray = document.querySelector(".list-colors").children;
+let sizesArray = document.querySelector(".list-sizes").children;
+for (let i = 0; i < colorsArray.length; i++) {
+  colorsArray[i].addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("list-color_active");
+  });
+}
+for (let i = 0; i < sizesArray.length; i++) {
+  sizesArray[i].addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("list-color_active");
+  });
+}
+
+// slider
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#splide-1", {
     perPage: 4,
