@@ -15,11 +15,13 @@ heart.addEventListener("click", () => {
 
 let buttonMenu = document.querySelectorAll(".button-menu");
 
+
 for (let i = 0; i < buttonMenu.length; i++) {
   buttonMenu[i].addEventListener(
     "click",
     (e) => {
-      console.log(e.target);
+      buttonMenu.forEach(el=> el.classList.remove("button-menu_active"))
+      e.currentTarget.classList.toggle('button-menu_active');
     },
     false
   );
