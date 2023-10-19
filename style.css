@@ -734,3 +734,22 @@ h6 {
   margin-bottom: 89px;
   justify-content: space-evenly;
 }
+@media (max-width: 1464px) and (min-width: 600px) {
+  .product__sale{
+    width: 80%;
+  }
+  .consultation-card {
+    display: none;
+  }
+}
+@media (max-width: 1024px) and (min-width: 600px) {
+  .product__images{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .product__information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
