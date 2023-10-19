@@ -111,7 +111,7 @@ h6 {
   margin-right: 14px;
   width: 29px;
 }
-.slider_mobile{
+.slider_mobile {
   display: none;
 }
 .product__images {
@@ -327,7 +327,7 @@ h6 {
   display: flex;
 }
 
-.characteristics__information ul{
+.characteristics__information ul {
   width: 300px;
 }
 .characteristics__information li {
@@ -347,19 +347,43 @@ h6 {
   margin: 0 7px;
   border-bottom: 1px dashed #dfdfdf;
 }
-
+.mobile-slider {
+  display: none;
+}
 
 @media (max-width: 390px) and (min-width: 320px) {
   .product__container {
     margin: 21px 11.5px 62px 12px;
   }
-  .slider_mobile{
-    display: block;
-  }
+
   .product__image {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 92px;
   }
+  .product__image_curent {
+    width: 296px;
+    height: 388px;
+  }
+  .product__image_video{
+    height: 500px;
+  }
+  .mobile-slider {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+  }
+  .thumbnail {
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+
   .arrow p {
     font-size: 11px;
   }
@@ -368,6 +392,16 @@ h6 {
   }
   .product__images {
     display: none;
+    /* display: grid;
+    width: 100%;
+    grid-gap: 10px;
+    justify-items: center;
+    justify-content: space-between;
+    grid-template-areas:
+      "current current current"
+      "other other other";
+    grid-template-rows: 400px;
+    grid-template-columns: 33% 33% 33% ; */
   }
   .product__media {
     flex-direction: column;
@@ -436,7 +470,7 @@ h6 {
     font-size: 16px;
     margin: 0px 0px 0px 20px;
   }
-  .characteristics__information ul{
+  .characteristics__information ul {
     width: 300px;
   }
 
@@ -555,7 +589,7 @@ h6 {
   background: #fdfcfc;
   cursor: pointer;
 }
-.button-menu_active{
+.button-menu_active {
   border-top: 2px solid #9a7660;
 }
 .product-desctiption__text {
@@ -605,7 +639,7 @@ h6 {
 .slider {
   margin-top: 50px;
 }
-.arrow__buttom{
+.arrow__buttom {
   margin: 0px 0px 100px 286px;
 }
 @media (max-width: 390px) and (min-width: 320px) {
@@ -652,10 +686,10 @@ h6 {
     justify-content: center;
     align-items: center;
   }
-  .main-footer{
+  .main-footer {
     display: none;
   }
-  .arrow__buttom{
+  .arrow__buttom {
     margin: 0px 0px 50px 12px;
   }
 }
@@ -665,13 +699,13 @@ h6 {
   line-height: 28px; /* 155.556% */
   text-align: center;
 }
-.main-footer__container{
+.main-footer__container {
   margin-bottom: 112px;
 }
-.main-footer{
+.main-footer {
   position: relative;
 }
-.main-footer__container::before{
+.main-footer__container::before {
   content: "";
   display: block;
   width: 1750px;

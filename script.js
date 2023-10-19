@@ -65,41 +65,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   splide2.mount();
 
-  const splide3 = new Splide("#splide-mobile", {
-    type: "loop",
-    height: "14rem",
-    perPage: 2,
-    perMove: 1,
-    grid: {
-      // You can define rows/cols instead of dimensions.
-      dimensions: [
-        [1, 1],
-        [2, 2],
-        [2, 1],
-        [1, 2],
-        [2, 2],
-        [3, 2],
-      ],
-      gap: {
-        row: "6px",
-        col: "6px",
-      },
-    },
-    breakpoints: {
-      640: {
-        height: "8rem",
-        perPage: 1,
-        grid: {
-          dimensions: [
-            [2, 2],
-            [1, 1],
-            [2, 1],
-            [1, 2],
-            [2, 2],
-          ],
-        },
-      },
-    },
+  var splide = new Splide("#main-carousel", {
+    pagination: false,
   });
-  splide3.mount();
+
+  var thumbnails = document.getElementsByClassName("thumbnail");
+  var current;
+
+  for (var i = 0; i < thumbnails.length; i++) {
+    initThumbnail(thumbnails[i], i);
+  }
+
+  function initThumbnail(thumbnail, index) {
+    thumbnail.addEventListener("click", function () {
+      splide.go(index);
+    });
+  }
+
+  splide.on("mounted move", function () {
+    var thumbnail = thumbnails[splide.index];
+
+    if (thumbnail) {
+      if (current) {
+        current.classList.remove("is-active");
+      }
+
+      thumbnail.classList.add("is-active");
+      current = thumbnail;
+    }
+  });
+
+  splide.mount();
 });
