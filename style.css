@@ -233,8 +233,6 @@ h6 {
 }
 .list-sizes li {
   cursor: pointer;
-  width: 26px;
-  height: 26px;
 }
 .list-sizes__size {
   margin-right: 30px;
@@ -368,7 +366,10 @@ h6 {
   .product__container {
     margin: 21px 11.5px 62px 12px;
   }
-
+  .list-sizes li {
+    width: fit-content;
+    height: fit-content;
+  }
   .product__image {
     width: 70px;
     height: 92px;
