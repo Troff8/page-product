@@ -1,16 +1,18 @@
+const basket = {};
+
 // counter
 let counter = document.getElementById("counter");
 document.getElementById("counter__reduce").addEventListener("click", () => {
   if (counter.value > 1) counter.value = +counter.value - 1;
 });
 document.getElementById("counter__add").addEventListener("click", () => {
-  counter.value = +counter.value + 1;
+  if (counter.value < 10) counter.value = +counter.value + 1;
 });
 
 // Избранное
 let heart = document.getElementById("favorites-icon");
 heart.addEventListener("click", () => {
-  heart.classList.toggle("_active");
+  heart.classList.toggle("_heart-active");
 });
 
 // кнопки в описании
@@ -19,23 +21,71 @@ for (let i = 0; i < buttonMenu.length; i++) {
   buttonMenu[i].addEventListener("click", (e) => {
     buttonMenu.forEach((el) => el.classList.remove("button-menu_active"));
     e.currentTarget.classList.toggle("button-menu_active");
+    if (e.currentTarget.id === "button-description") {
+      document.querySelector(".text-description").classList.add("_text-active");
+      document.querySelector(".text-buy").classList.remove("_text-active");
+      document.querySelector(".text-methods").classList.remove("_text-active");
+    }
+    if (e.currentTarget.id === "button-buy") {
+      document.querySelector(".text-buy").classList.add("_text-active");
+      document
+        .querySelector(".text-description")
+        .classList.remove("_text-active");
+      document.querySelector(".text-methods").classList.remove("_text-active");
+    }
+    if (e.currentTarget.id === "button-methods") {
+      document.querySelector(".text-methods").classList.add("_text-active");
+      document.querySelector(".text-buy").classList.remove("_text-active");
+      document
+        .querySelector(".text-description")
+        .classList.remove("_text-active");
+    }
   });
 }
 
+// Таблица
+// Сейчас цвета для квадратиков заданы статично в css, планируется что при подгрузке цветов у них уже будет содержаться цвет
 let colorsArray = document.querySelector(".list-colors").children;
-let sizesArray = document.querySelector(".list-sizes").children;
+let sizesArray = document.querySelectorAll(".list-sizes");
+let currentColor = "white"; // По дефолту можем поставить цвет самого первого цвета в списке цветов,это нужно чтобы юзер не выбрал размер из другого цвета
 for (let i = 0; i < colorsArray.length; i++) {
   colorsArray[i].addEventListener("click", (e) => {
-    e.currentTarget.classList.toggle("list-color_active");
-  });
-}
-for (let i = 0; i < sizesArray.length; i++) {
-  sizesArray[i].addEventListener("click", (e) => {
-    e.currentTarget.classList.toggle("list-color_active");
+    for (let i = 0; i < colorsArray.length; i++) {
+      colorsArray[i].classList.remove("list-color_active");
+    }
+    e.currentTarget.classList.add("list-color_active");
   });
 }
 
-// slider
+console.log(sizesArray[0].children[0]);
+for (let i = 0; i < sizesArray.length; i++) {
+  for (let j = 0; j < sizesArray[i].children.length; j++) {
+    sizesArray[i].children[j].addEventListener("click", (e) => {
+      // Здесь смотрим на currentColor === sizesArray[i].children.id 
+      if (true) {
+        for (let i = 0; i < sizesArray.length; i++) {
+          for (let j = 0; j < sizesArray[i].children.length; j++) {
+            sizesArray[i].children[j].classList.remove("list-color_active");
+          }
+        }
+
+        e.currentTarget.classList.add("list-color_active");
+      }
+    });
+  }
+}
+
+// Кнопка добавить в корзину - собираем всю инфу о заказе и кидаем в баскет
+const buttonBasket = document
+  .getElementById("button-basket")
+  .addEventListener("click", () => {
+    basket.product = document.getElementById("product-title").textContent;
+    basket.price = document.getElementById("price").textContent;
+    basket.count = document.getElementById("counter").value;
+    console.log(basket);
+  });
+
+// Слайдеры
 document.addEventListener("DOMContentLoaded", function () {
   var splide = new Splide("#splide-1", {
     perPage: 4,
@@ -97,3 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   splide.mount();
 });
+
+// Картинки на фул скрин - сейчас просто вешается класс,в проекте уже думаю есть модалка и можно будет использовать ее
+const images = document.querySelectorAll(".product__image");
+for (let i = 0; i < images.length; i++) {
+  images[i].addEventListener("click", () => {
+    images[i].classList.toggle("_image-fullscreen");
+  });
+}
