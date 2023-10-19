@@ -573,10 +573,10 @@ h6 {
 .consltation-card__question::before {
   content: "";
   display: block;
-  width: 414.5px;
+  width: 250%;
   height: 1px;
   background: #eee;
-  right: -110%;
+  right: -77%;
   top: -50%;
   position: absolute;
 }
