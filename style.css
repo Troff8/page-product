@@ -627,6 +627,7 @@ h6 {
 .card-product {
   display: flex;
   flex-direction: column;
+  align-items:center;
 }
 .card-product__image {
   width: 90%;
@@ -752,4 +753,25 @@ h6 {
     justify-content: space-around;
   }
 }
+@media (max-width: 706px) and (min-width: 391px) {
+  .product__images{
+    grid-template-columns: repeat(1, 1fr);
+    align-content: start;
+  }
+  .product__image{
+    aspect-ratio: 3/4;
+  }
+  .table{
+    margin: 23px 0px 0px 21px;
+  }
+  .table__color{
+    margin-right: 24px;
+  }
+}
 
+.counter-stars{
+  display: none;
+}
+#button-lock{
+  display: none;
+}
