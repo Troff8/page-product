@@ -96,6 +96,11 @@ document.addEventListener("DOMContentLoaded", function () {
         gap: "200px",
         height: "350px",
       },
+      650: {
+        perPage: 2,
+        gap: "200px",
+        height: "350px",
+      },
     },
   });
 
@@ -106,6 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
     gap: "2rem",
     breakpoints: {
       480: {
+        perPage: 2,
+        gap: "200px",
+        height: "350px",
+      },
+      650: {
         perPage: 2,
         gap: "200px",
         height: "350px",
