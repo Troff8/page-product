@@ -116,22 +116,20 @@ h6 {
   display: none;
 }
 .product__images {
-  /* max-width: 978px;
-  max-height: 1284px; */
   width: 60%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 19px;
+  align-content: start;
 }
 .product__image {
   cursor: pointer;
   width: 100%;  
   flex: 1 1 10%;
   max-height: 630px;
+  aspect-ratio: 3/4;
 }
-._image-fullscreen img {
 
-}
 
 .product__media {
   display: flex;
