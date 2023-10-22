@@ -232,6 +232,9 @@ tbody {
   width: 100%;
   padding-inline: 12%;
 }
+.column-table__color{
+  cursor: pointer;
+}
 
 .table tbody tr {
   display: flex;
@@ -262,10 +265,12 @@ tbody {
   width: 24px;
   height: 24px;
   margin-right: 20px;
+  cursor: pointer;
 }
 .link-size__title {
   color: #9a7660;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------------------*/
