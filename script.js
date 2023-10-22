@@ -45,19 +45,18 @@ for (let i = 0; i < buttonMenu.length; i++) {
 
 // Таблица
 // Сейчас цвета для квадратиков заданы статично в css, планируется что при подгрузке цветов у них уже будет содержаться цвет
-let colorsArray = document.querySelector(".list-colors").children;
-let sizesArray = document.querySelectorAll(".list-sizes");
-let currentColor = "white"; // По дефолту можем поставить цвет самого первого цвета в списке цветов,это нужно чтобы юзер не выбрал размер из другого цвета
+let colorsArray = document.querySelectorAll(".column-table__color");
+let sizesArray = document.querySelectorAll(".column-table__sizes");
 for (let i = 0; i < colorsArray.length; i++) {
   colorsArray[i].addEventListener("click", (e) => {
     for (let i = 0; i < colorsArray.length; i++) {
-      colorsArray[i].classList.remove("list-color_active");
+      colorsArray[i].classList.remove("square-active");
     }
-    e.currentTarget.classList.add("list-color_active");
+    e.currentTarget.classList.add("square-active");
   });
 }
 
-console.log(sizesArray[0].children[0]);
+
 for (let i = 0; i < sizesArray.length; i++) {
   for (let j = 0; j < sizesArray[i].children.length; j++) {
     sizesArray[i].children[j].addEventListener("click", (e) => {
@@ -65,11 +64,11 @@ for (let i = 0; i < sizesArray.length; i++) {
       if (true) {
         for (let i = 0; i < sizesArray.length; i++) {
           for (let j = 0; j < sizesArray[i].children.length; j++) {
-            sizesArray[i].children[j].classList.remove("list-color_active");
+            sizesArray[i].children[j].classList.remove("square-active");
           }
         }
 
-        e.currentTarget.classList.add("list-color_active");
+        e.currentTarget.classList.add("square-active");
       }
     });
   }
